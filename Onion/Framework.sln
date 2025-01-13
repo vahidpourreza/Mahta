@@ -25,6 +25,16 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3. Endpoints", "3. Endpoint
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Framework.Utilities", "src\1.Utilities\Framework.Utilities\Framework.Utilities.csproj", "{A7BAED7A-CE11-460E-9BC6-3A91891DA0C5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Framework.Core.ApplicationServices", "src\2.Core\Framework.Core.ApplicationServices\Framework.Core.ApplicationServices.csproj", "{DCBA8583-F52E-4A02-9393-677E6391D629}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Framework.Core.Contracts", "src\2.Core\Framework.Core.Contracts\Framework.Core.Contracts.csproj", "{3701A154-4EE8-4606-9E53-453CA5D927C1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Framework.Core.Domain", "src\2.Core\Framework.Core.Domain\Framework.Core.Domain.csproj", "{E310F4B6-83F0-4C62-8148-9115DC476A04}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Framework.Core.Domain.Toolkits", "src\2.Core\Framework.Core.Domain.Toolkits\Framework.Core.Domain.Toolkits.csproj", "{A51C8021-D614-487F-8BA4-CC482D486B01}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Framework.Core.RequestResponse", "src\2.Core\Framework.Core.RequestResponse\Framework.Core.RequestResponse.csproj", "{008A0E68-1A5F-4CEC-8849-EFE5B6C84663}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,6 +45,26 @@ Global
 		{A7BAED7A-CE11-460E-9BC6-3A91891DA0C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A7BAED7A-CE11-460E-9BC6-3A91891DA0C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A7BAED7A-CE11-460E-9BC6-3A91891DA0C5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DCBA8583-F52E-4A02-9393-677E6391D629}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DCBA8583-F52E-4A02-9393-677E6391D629}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DCBA8583-F52E-4A02-9393-677E6391D629}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DCBA8583-F52E-4A02-9393-677E6391D629}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3701A154-4EE8-4606-9E53-453CA5D927C1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3701A154-4EE8-4606-9E53-453CA5D927C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3701A154-4EE8-4606-9E53-453CA5D927C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3701A154-4EE8-4606-9E53-453CA5D927C1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E310F4B6-83F0-4C62-8148-9115DC476A04}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E310F4B6-83F0-4C62-8148-9115DC476A04}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E310F4B6-83F0-4C62-8148-9115DC476A04}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E310F4B6-83F0-4C62-8148-9115DC476A04}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A51C8021-D614-487F-8BA4-CC482D486B01}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A51C8021-D614-487F-8BA4-CC482D486B01}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A51C8021-D614-487F-8BA4-CC482D486B01}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A51C8021-D614-487F-8BA4-CC482D486B01}.Release|Any CPU.Build.0 = Release|Any CPU
+		{008A0E68-1A5F-4CEC-8849-EFE5B6C84663}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{008A0E68-1A5F-4CEC-8849-EFE5B6C84663}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{008A0E68-1A5F-4CEC-8849-EFE5B6C84663}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{008A0E68-1A5F-4CEC-8849-EFE5B6C84663}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -48,5 +78,10 @@ Global
 		{44B63205-57D1-47F2-B94A-3338F9E711D6} = {B5D91DF1-E320-4CE9-B5A7-0D30BBBE076E}
 		{0B698A56-5A9D-48C0-90B8-82F6FDA8B7D9} = {B5D91DF1-E320-4CE9-B5A7-0D30BBBE076E}
 		{A7BAED7A-CE11-460E-9BC6-3A91891DA0C5} = {29B437FE-5328-4E5D-8BF7-0DA5FEEEE5C8}
+		{DCBA8583-F52E-4A02-9393-677E6391D629} = {7CD83558-619B-4E91-8490-65896C9C1551}
+		{3701A154-4EE8-4606-9E53-453CA5D927C1} = {7CD83558-619B-4E91-8490-65896C9C1551}
+		{E310F4B6-83F0-4C62-8148-9115DC476A04} = {7CD83558-619B-4E91-8490-65896C9C1551}
+		{A51C8021-D614-487F-8BA4-CC482D486B01} = {7CD83558-619B-4E91-8490-65896C9C1551}
+		{008A0E68-1A5F-4CEC-8849-EFE5B6C84663} = {7CD83558-619B-4E91-8490-65896C9C1551}
 	EndGlobalSection
 EndGlobal
