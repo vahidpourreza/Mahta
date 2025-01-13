@@ -43,6 +43,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Framework.Infra.Data.Sql.Co
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Framework.Infra.Data.Sql.Queries", "src\3.Infra\Data\Framework.Infra.Data.Sql.Queries\Framework.Infra.Data.Sql.Queries.csproj", "{1AFEDDEF-FDAB-4EF6-BB66-025D0CF3C940}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Framework.EndPoints.Web", "src\4.EndPoints\Framework.EndPoints.Web\Framework.EndPoints.Web.csproj", "{84CFA998-CDFE-44AC-AA48-FA81B8E72DD9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -85,6 +87,10 @@ Global
 		{1AFEDDEF-FDAB-4EF6-BB66-025D0CF3C940}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1AFEDDEF-FDAB-4EF6-BB66-025D0CF3C940}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1AFEDDEF-FDAB-4EF6-BB66-025D0CF3C940}.Release|Any CPU.Build.0 = Release|Any CPU
+		{84CFA998-CDFE-44AC-AA48-FA81B8E72DD9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{84CFA998-CDFE-44AC-AA48-FA81B8E72DD9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{84CFA998-CDFE-44AC-AA48-FA81B8E72DD9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{84CFA998-CDFE-44AC-AA48-FA81B8E72DD9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -107,5 +113,6 @@ Global
 		{087AEE73-1C0C-4DB9-97AB-992C39963E7B} = {954DE97C-398C-410B-B49F-0F4085B0570B}
 		{A352EC06-558E-4F10-8B3E-95F9BFD059BA} = {954DE97C-398C-410B-B49F-0F4085B0570B}
 		{1AFEDDEF-FDAB-4EF6-BB66-025D0CF3C940} = {954DE97C-398C-410B-B49F-0F4085B0570B}
+		{84CFA998-CDFE-44AC-AA48-FA81B8E72DD9} = {7D360A2E-66EF-47F8-BF43-13BFD91A9968}
 	EndGlobalSection
 EndGlobal
