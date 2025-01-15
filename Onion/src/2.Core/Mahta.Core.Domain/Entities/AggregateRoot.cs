@@ -10,12 +10,7 @@ namespace Mahta.Core.Domain.Entities;
 /// https://martinfowler.com/bliki/DDD_Aggregate.html
 /// 
 /// </summary>
-public abstract class AggregateRoot<TId> : Entity<TId>, IAggregateRoot where TId : struct,
-          IComparable,
-          IComparable<TId>,
-          IConvertible,
-          IEquatable<TId>,
-          IFormattable
+public abstract class AggregateRoot<TId> : Entity<TId>, IAggregateRoot where TId : struct, IComparable, IComparable<TId>, IConvertible, IEquatable<TId>, IFormattable
 {
     /// <summary>
     /// لیست Evantهای مربوطه را نگهداری می‌کند        

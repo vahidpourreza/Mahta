@@ -11,4 +11,10 @@
     <ProjectReference Include="..\Mahta.Core.RequestResponse\Mahta.Core.RequestResponse.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="ApplicationServices\Commands\" />
+    <Folder Include="ApplicationServices\Queries\" />
+    <Folder Include="Data\" />
+  </ItemGroup>
+
 </Project>

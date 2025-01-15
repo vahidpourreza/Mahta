@@ -7,8 +7,7 @@
 /// https://martinfowler.com/bliki/ValueObject.html
 /// </summary>
 /// <typeparam name="TValueObject"></typeparam>
-public abstract class BaseValueObject<TValueObject> : IEquatable<TValueObject>
-        where TValueObject : BaseValueObject<TValueObject>
+public abstract class BaseValueObject<TValueObject> : IEquatable<TValueObject> where TValueObject : BaseValueObject<TValueObject>
 {
     public bool Equals(TValueObject other) => this == other;
 
