@@ -11,8 +11,4 @@
     <ProjectReference Include="..\Mahta.Core.RequestResponse\Mahta.Core.RequestResponse.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Data\" />
-  </ItemGroup>
-
 </Project>
