@@ -1,0 +1,15 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\1.Utilities\Mahta.Utilities\Mahta.Utilities.csproj" />
+    <ProjectReference Include="..\Mahta.Core.Contracts\Mahta.Core.Contracts.csproj" />
+    <ProjectReference Include="..\Mahta.Core.Domain\Mahta.Core.Domain.csproj" />
+  </ItemGroup>
+
+</Project>
