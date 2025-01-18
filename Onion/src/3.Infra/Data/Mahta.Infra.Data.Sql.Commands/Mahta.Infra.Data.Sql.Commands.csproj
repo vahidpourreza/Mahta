@@ -6,10 +6,27 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+
+	<ItemGroup>
+		<PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="9.0.0" />
+		<PackageReference Include="Zamin.Extensions.Serializers.Abstractions" Version="9.0.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Using Include="Microsoft.EntityFrameworkCore" />
+	</ItemGroup>
+	
+	
   <ItemGroup>
     <ProjectReference Include="..\..\..\2.Core\Mahta.Core.Contracts\Mahta.Core.Contracts.csproj" />
     <ProjectReference Include="..\..\..\2.Core\Mahta.Core.Domain\Mahta.Core.Domain.csproj" />
     <ProjectReference Include="..\Mahta.Infra.Data.Sql\Mahta.Infra.Data.Sql.csproj" />
+  </ItemGroup>
+	
+	
+  <ItemGroup>
+    <Folder Include="Interceptors\" />
+    <Folder Include="ValueConversions\" />
   </ItemGroup>
 
 </Project>
