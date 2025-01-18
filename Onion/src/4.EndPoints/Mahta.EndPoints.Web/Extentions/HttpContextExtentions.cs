@@ -15,6 +15,6 @@ public static class HttpContextExtensions
     public static IEventDispatcher EventDispatcher(this HttpContext httpContext) =>
         (IEventDispatcher)httpContext.RequestServices.GetService(typeof(IEventDispatcher));
 
-    public static MahtaServices ZaminApplicationContext(this HttpContext httpContext) =>
+    public static MahtaServices MahtaApplicationContext(this HttpContext httpContext) =>
         (MahtaServices)httpContext.RequestServices.GetService(typeof(MahtaServices));
 }
