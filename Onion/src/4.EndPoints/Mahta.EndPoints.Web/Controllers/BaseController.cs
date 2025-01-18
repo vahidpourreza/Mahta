@@ -1,7 +1,6 @@
 ﻿using Mahta.Core.Contracts.ApplicationServices.Events;
 using Mahta.EndPoints.Web.Extentions;
 using Mahta.Utilities;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Net;
 
@@ -14,19 +13,6 @@ public class BaseController : Controller
     protected IQueryDispatcher QueryDispatcher => HttpContext.QueryDispatcher();
     protected IEventDispatcher EventDispatcher => HttpContext.EventDispatcher();
     protected MahtaServices MahtaApplicationContext => HttpContext.MahtaApplicationContext();
-
-    public IActionResult Excel<T>(List<T> list)
-    {
-        var serializer = (IExcelSerializer)HttpContext.RequestServices.GetRequiredService(typeof(IExcelSerializer));
-        var bytes = serializer.ListToExcelByteArray(list);
-        return File(bytes, "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet");
-    }
-    public IActionResult Excel<T>(List<T> list, string fileName)
-    {
-        var serializer = (IExcelSerializer)HttpContext.RequestServices.GetRequiredService(typeof(IExcelSerializer));
-        var bytes = serializer.ListToExcelByteArray(list);
-        return File(bytes, "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", $"{fileName}.xlsx");
-    }
 
 
     protected async Task<IActionResult> Create<TCommand, TCommandResult>(TCommand command) where TCommand : class, ICommand<TCommandResult>
@@ -57,7 +43,7 @@ public class BaseController : Controller
         {
             return StatusCode((int)HttpStatusCode.OK, result.Data);
         }
-        else if (result.Status == ApplicationServiceStatus.NotFound)
+        if (result.Status == ApplicationServiceStatus.NotFound)
         {
             return StatusCode((int)HttpStatusCode.NotFound, command);
         }
@@ -71,7 +57,7 @@ public class BaseController : Controller
         {
             return StatusCode((int)HttpStatusCode.OK);
         }
-        else if (result.Status == ApplicationServiceStatus.NotFound)
+        if (result.Status == ApplicationServiceStatus.NotFound)
         {
             return StatusCode((int)HttpStatusCode.NotFound, command);
         }
@@ -85,8 +71,8 @@ public class BaseController : Controller
         if (result.Status == ApplicationServiceStatus.Ok)
         {
             return StatusCode((int)HttpStatusCode.OK, result.Data);
-        }
-        else if (result.Status == ApplicationServiceStatus.NotFound)
+        } 
+        if (result.Status == ApplicationServiceStatus.NotFound)
         {
             return StatusCode((int)HttpStatusCode.NotFound, command);
         }
@@ -99,8 +85,8 @@ public class BaseController : Controller
         if (result.Status == ApplicationServiceStatus.Ok)
         {
             return StatusCode((int)HttpStatusCode.OK);
-        }
-        else if (result.Status == ApplicationServiceStatus.NotFound)
+        } 
+        if (result.Status == ApplicationServiceStatus.NotFound)
         {
             return StatusCode((int)HttpStatusCode.NotFound, command);
         }
@@ -115,12 +101,12 @@ public class BaseController : Controller
         if (result.Status.Equals(ApplicationServiceStatus.InvalidDomainState) || result.Status.Equals(ApplicationServiceStatus.ValidationError))
         {
             return BadRequest(result.Messages);
-        }
-        else if (result.Status.Equals(ApplicationServiceStatus.NotFound) || result.Data == null)
+        } 
+        if (result.Status.Equals(ApplicationServiceStatus.NotFound) || result.Data == null)
         {
             return StatusCode((int)HttpStatusCode.NoContent);
         }
-        else if (result.Status.Equals(ApplicationServiceStatus.Ok))
+        if (result.Status.Equals(ApplicationServiceStatus.Ok))
         {
             return Ok(result.Data);
         }
