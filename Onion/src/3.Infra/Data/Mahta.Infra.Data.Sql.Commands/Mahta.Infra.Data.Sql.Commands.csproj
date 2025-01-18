@@ -22,11 +22,5 @@
     <ProjectReference Include="..\..\..\2.Core\Mahta.Core.Domain\Mahta.Core.Domain.csproj" />
     <ProjectReference Include="..\Mahta.Infra.Data.Sql\Mahta.Infra.Data.Sql.csproj" />
   </ItemGroup>
-	
-	
-  <ItemGroup>
-    <Folder Include="Interceptors\" />
-    <Folder Include="ValueConversions\" />
-  </ItemGroup>
 
 </Project>
