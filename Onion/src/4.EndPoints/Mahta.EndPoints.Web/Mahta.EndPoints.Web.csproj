@@ -15,4 +15,40 @@
     <ProjectReference Include="..\..\2.Core\Mahta.Core.RequestResponse\Mahta.Core.RequestResponse.csproj" />
   </ItemGroup>
 
+
+	<ItemGroup>
+		<PackageReference Include="FluentValidation.AspNetCore" Version="11.3.0" />
+		<PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="9.0.0" />
+		<PackageReference Include="Microsoft.Extensions.DependencyModel" Version="9.0.0" />
+		<PackageReference Include="Scrutor" Version="5.0.2" />
+		<PackageReference Include="Microsoft.Data.SqlClient" Version="5.2.2" />
+
+	</ItemGroup>
+
+	<ItemGroup>
+		<Using Include="Microsoft.AspNetCore.Builder" />
+		<Using Include="Microsoft.AspNetCore.Hosting" />
+		<Using Include="Microsoft.Extensions.Configuration" />
+		<Using Include="Microsoft.Extensions.Hosting" />
+		<Using Include="Microsoft.Extensions.DependencyInjection" />
+		<Using Include="Microsoft.Extensions.Logging" />
+		<Using Include="Microsoft.Extensions.DependencyModel" />
+		<Using Include="System.Reflection" />
+		<Using Include="Mahta.Core.Contracts.ApplicationServices.Commands" />
+		<Using Include="Mahta.Core.Contracts.ApplicationServices.Queries" />
+		<Using Include="Mahta.Core.RequestResponse.Common" />
+		<Using Include="Mahta.Core.RequestResponse.Commands" />
+		<Using Include="Mahta.Core.RequestResponse.Queries" />
+		<Using Include="Mahta.Core.Contracts.Data.Commands" />
+		<Using Include="Mahta.Core.Contracts.Data.Queries" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Folder Include="Controllers\" />
+	  <Folder Include="Extentions\DependencyInjection\" />
+	  <Folder Include="Filters\" />
+	</ItemGroup>
+	
+	
+	
 </Project>
