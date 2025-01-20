@@ -1,25 +1,67 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFramework>net9.0</TargetFramework>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
-  </PropertyGroup>
+	<PropertyGroup>
+		<TargetFramework>net9.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
 
-  <ItemGroup>
-    <ProjectReference Include="..\..\1.Utilities\Mahta.Utilities\Mahta.Utilities.csproj" />
-    <ProjectReference Include="..\..\2.Core\Mahta.Core.ApplicationServices\Mahta.Core.ApplicationServices.csproj" />
-    <ProjectReference Include="..\..\2.Core\Mahta.Core.Contracts\Mahta.Core.Contracts.csproj" />
-    <ProjectReference Include="..\..\2.Core\Mahta.Core.Domain.Toolkits\Mahta.Core.Domain.Toolkits.csproj" />
-    <ProjectReference Include="..\..\2.Core\Mahta.Core.Domain\Mahta.Core.Domain.csproj" />
-    <ProjectReference Include="..\..\2.Core\Mahta.Core.RequestResponse\Mahta.Core.RequestResponse.csproj" />
-  </ItemGroup>
+		<!-- NET_VERSION.YOUR_LIBRARY_VERSION -->
+		<VersionPrefix>9.1.0</VersionPrefix>
+
+		<!-- Pre-release identifier -->
+		<VersionSuffix>alpha</VersionSuffix>
+
+		<Authors>Mahta Authors</Authors>
+		<Company>Mahta</Company>
+		<GeneratePackageOnBuild>False</GeneratePackageOnBuild>
+		<Description> Mahta EndPoints Web </Description>
+		<RepositoryUrl>https://Mahta.Pro</RepositoryUrl>
+		<PackageIcon>icon.png</PackageIcon>
+
+		<!--WARNING: Define a property to control local copying -->
+		<CopyToLocalFolder>true</CopyToLocalFolder>
+		<!--WARNING End -->
+
+	</PropertyGroup>
+
+
+	<!--WARNING: delete this wrapper if you moved the package source to azure.-->
+	<Target Name="CopyNuGetPackage" AfterTargets="Pack" Condition="'$(CopyToLocalFolder)' == 'true'">
+		<PropertyGroup>
+			<!-- Define the destination folder for the NuGet package -->
+			<PackageOutputPath>D:\LocalNuGetPackages</PackageOutputPath>
+		</PropertyGroup>
+
+		<ItemGroup>
+			<!-- Include the generated .nupkg file -->
+			<NuGetPackageFiles Include="$(OutputPath)..\$(PackageId).$(PackageVersion).nupkg" />
+		</ItemGroup>
+
+		<!-- Create the destination folder if it doesn't exist -->
+		<MakeDir Directories="$(PackageOutputPath)" />
+
+		<!-- Copy the .nupkg file to the destination folder -->
+		<Copy SourceFiles="@(NuGetPackageFiles)" DestinationFolder="$(PackageOutputPath)" />
+
+		<!-- Log a message to confirm the copy operation -->
+		<Message Text="Copied NuGet package to $(PackageOutputPath)" Importance="high" />
+	</Target>
+	<!--WARNING End -->
+
+	<ItemGroup>
+		<ProjectReference Include="..\..\1.Utilities\Mahta.Utilities\Mahta.Utilities.csproj" />
+		<ProjectReference Include="..\..\2.Core\Mahta.Core.ApplicationServices\Mahta.Core.ApplicationServices.csproj" />
+		<ProjectReference Include="..\..\2.Core\Mahta.Core.Contracts\Mahta.Core.Contracts.csproj" />
+		<ProjectReference Include="..\..\2.Core\Mahta.Core.Domain.Toolkits\Mahta.Core.Domain.Toolkits.csproj" />
+		<ProjectReference Include="..\..\2.Core\Mahta.Core.Domain\Mahta.Core.Domain.csproj" />
+		<ProjectReference Include="..\..\2.Core\Mahta.Core.RequestResponse\Mahta.Core.RequestResponse.csproj" />
+	</ItemGroup>
 
 
 	<ItemGroup>
 		<None Include="..\..\..\..\icon.png" Pack="true" PackagePath="" />
 	</ItemGroup>
-	
+
 
 	<ItemGroup>
 		<PackageReference Include="FluentValidation.AspNetCore" Version="11.3.0" />
@@ -49,9 +91,17 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Folder Include="Filters\" />
+		<Folder Include="Filters\" />
 	</ItemGroup>
-	
-	
-	
+
+
+
+
+
 </Project>
+
+
+
+
+
+
