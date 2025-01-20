@@ -15,9 +15,13 @@
 	<ItemGroup>
 		<Using Include="Microsoft.EntityFrameworkCore" />
 	</ItemGroup>
-	
-	
-  <ItemGroup>
+
+	<ItemGroup>
+		<None Include="..\..\..\..\..\icon.png" Pack="true" PackagePath="" />
+	</ItemGroup>
+
+
+	<ItemGroup>
     <ProjectReference Include="..\..\..\2.Core\Mahta.Core.Contracts\Mahta.Core.Contracts.csproj" />
     <ProjectReference Include="..\..\..\2.Core\Mahta.Core.Domain\Mahta.Core.Domain.csproj" />
     <ProjectReference Include="..\Mahta.Infra.Data.Sql\Mahta.Infra.Data.Sql.csproj" />

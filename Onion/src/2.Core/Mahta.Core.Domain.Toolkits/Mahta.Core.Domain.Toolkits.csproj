@@ -6,6 +6,12 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+		<ItemGroup>
+				<None Include="..\..\..\..\icon.png" Pack="true" PackagePath="" />
+		</ItemGroup>
+
+
+
   <ItemGroup>
     <ProjectReference Include="..\..\1.Utilities\Mahta.Utilities\Mahta.Utilities.csproj" />
     <ProjectReference Include="..\Mahta.Core.Domain\Mahta.Core.Domain.csproj" />
