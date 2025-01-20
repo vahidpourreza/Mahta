@@ -1,4 +1,4 @@
-﻿using Zamin.Extensions.DependencyInjection.Abstractions;
+﻿using Mahta.Extensions.DependencyInjection.Abstractions;
 
 namespace Mahta.EndPoints.Web.Extentions.DependencyInjection;
 

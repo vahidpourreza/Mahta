@@ -1,6 +1,6 @@
 ﻿using Mahta.Core.Domain.Exceptions;
 using Microsoft.Extensions.Logging;
-using Zamin.Extensions.Logger.Abstractions;
+using Mahta.Extensions.Logger.Abstractions;
 
 namespace Mahta.Core.ApplicationServices.Events;
 
@@ -27,13 +27,13 @@ public class EventDispatcherDomainExceptionHandlerDecorator : EventDispatcherDec
         }
         catch (DomainStateException ex)
         {
-            _logger.LogError(ZaminEventId.DomainValidationException, ex, "Processing of {EventType} With value {Event} failed at {StartDateTime} because there are domain exceptions.", @event.GetType(), @event, DateTime.Now);
+            _logger.LogError(MahtaEventId.DomainValidationException, ex, "Processing of {EventType} With value {Event} failed at {StartDateTime} because there are domain exceptions.", @event.GetType(), @event, DateTime.Now);
         }
         catch (AggregateException ex)
         {
             if (ex.InnerException is DomainStateException domainStateException)
             {
-                _logger.LogError(ZaminEventId.DomainValidationException, ex, "Processing of {EventType} With value {Event} failed at {StartDateTime} because there are domain exceptions.", @event.GetType(), @event, DateTime.Now);
+                _logger.LogError(MahtaEventId.DomainValidationException, ex, "Processing of {EventType} With value {Event} failed at {StartDateTime} because there are domain exceptions.", @event.GetType(), @event, DateTime.Now);
             }
             throw ex;
         }

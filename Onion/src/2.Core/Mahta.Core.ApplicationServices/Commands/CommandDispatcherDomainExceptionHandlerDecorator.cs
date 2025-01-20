@@ -3,8 +3,8 @@ using Mahta.Core.RequestResponse.Commands;
 using Mahta.Core.RequestResponse.Common;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using Zamin.Extensions.Logger.Abstractions;
-using Zamin.Extensions.Translations.Abstractions;
+using Mahta.Extensions.Logger.Abstractions;
+using Mahta.Extensions.Translations.Abstractions;
 
 namespace Mahta.Core.ApplicationServices.Commands;
 
@@ -35,14 +35,14 @@ public class CommandDispatcherDomainExceptionHandlerDecorator : CommandDispatche
         }
         catch (DomainStateException ex)
         {
-            _logger.LogError(ZaminEventId.DomainValidationException, ex, "Processing of {CommandType} With value {Command} failed at {StartDateTime} because there are domain exceptions.", command.GetType(), command, DateTime.Now);
+            _logger.LogError(MahtaEventId.DomainValidationException, ex, "Processing of {CommandType} With value {Command} failed at {StartDateTime} because there are domain exceptions.", command.GetType(), command, DateTime.Now);
             return DomainExceptionHandlingWithoutReturnValue<TCommand>(ex);
         }
         catch (AggregateException ex)
         {
             if (ex.InnerException is DomainStateException domainStateException)
             {
-                _logger.LogError(ZaminEventId.DomainValidationException, domainStateException, "Processing of {CommandType} With value {Command} failed at {StartDateTime} because there are domain exceptions.", command.GetType(), command, DateTime.Now);
+                _logger.LogError(MahtaEventId.DomainValidationException, domainStateException, "Processing of {CommandType} With value {Command} failed at {StartDateTime} because there are domain exceptions.", command.GetType(), command, DateTime.Now);
                 return DomainExceptionHandlingWithoutReturnValue<TCommand>(domainStateException);
             }
             throw ex;
@@ -60,14 +60,14 @@ public class CommandDispatcherDomainExceptionHandlerDecorator : CommandDispatche
         }
         catch (DomainStateException ex)
         {
-            _logger.LogError(ZaminEventId.DomainValidationException, ex, "Processing of {CommandType} With value {Command} failed at {StartDateTime} because there are domain exceptions.", command.GetType(), command, DateTime.Now);
+            _logger.LogError(MahtaEventId.DomainValidationException, ex, "Processing of {CommandType} With value {Command} failed at {StartDateTime} because there are domain exceptions.", command.GetType(), command, DateTime.Now);
             return DomainExceptionHandlingWithReturnValue<TCommand, TData>(ex);
         }
         catch (AggregateException ex)
         {
             if (ex.InnerException is DomainStateException domainStateException)
             {
-                _logger.LogError(ZaminEventId.DomainValidationException, ex, "Processing of {CommandType} With value {Command} failed at {StartDateTime} because there are domain exceptions.", command.GetType(), command, DateTime.Now);
+                _logger.LogError(MahtaEventId.DomainValidationException, ex, "Processing of {CommandType} With value {Command} failed at {StartDateTime} because there are domain exceptions.", command.GetType(), command, DateTime.Now);
                 return DomainExceptionHandlingWithReturnValue<TCommand, TData>(domainStateException);
             }
             throw ex;
@@ -110,7 +110,7 @@ public class CommandDispatcherDomainExceptionHandlerDecorator : CommandDispatche
              translator[domainStateException.Message, domainStateException.Parameters] :
                translator[domainStateException?.Message];
 
-        _logger.LogInformation(ZaminEventId.DomainValidationException, "Domain Exception message is {DomainExceptionMessage}", result);
+        _logger.LogInformation(MahtaEventId.DomainValidationException, "Domain Exception message is {DomainExceptionMessage}", result);
 
         return result;
     }

@@ -3,8 +3,8 @@ using Mahta.Core.RequestResponse.Common;
 using Mahta.Core.RequestResponse.Queries;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using Zamin.Extensions.Logger.Abstractions;
-using Zamin.Extensions.Translations.Abstractions;
+using Mahta.Extensions.Logger.Abstractions;
+using Mahta.Extensions.Translations.Abstractions;
 
 namespace Mahta.Core.ApplicationServices.Queries;
 
@@ -35,14 +35,14 @@ public class QueryDispatcherDomainExceptionHandlerDecorator : QueryDispatcherDec
         }
         catch (DomainStateException ex)
         {
-            _logger.LogError(ZaminEventId.DomainValidationException, ex, "Processing of {QueryType} With value {Query} failed at {StartDateTime} because there are domain exceptions.", query.GetType(), query, DateTime.Now);
+            _logger.LogError(MahtaEventId.DomainValidationException, ex, "Processing of {QueryType} With value {Query} failed at {StartDateTime} because there are domain exceptions.", query.GetType(), query, DateTime.Now);
             return DomainExceptionHandlingWithReturnValue<TQuery, TData>(ex);
         }
         catch (AggregateException ex)
         {
             if (ex.InnerException is DomainStateException domainStateException)
             {
-                _logger.LogError(ZaminEventId.DomainValidationException, ex, "Processing of {QueryType} With value {Query} failed at {StartDateTime} because there are domain exceptions.", query.GetType(), query, DateTime.Now);
+                _logger.LogError(MahtaEventId.DomainValidationException, ex, "Processing of {QueryType} With value {Query} failed at {StartDateTime} because there are domain exceptions.", query.GetType(), query, DateTime.Now);
                 return DomainExceptionHandlingWithReturnValue<TQuery, TData>(domainStateException);
             }
             throw ex;
@@ -73,7 +73,7 @@ public class QueryDispatcherDomainExceptionHandlerDecorator : QueryDispatcherDec
              translator[domainStateException.Message, domainStateException.Parameters] :
                translator[domainStateException?.Message];
 
-        _logger.LogInformation(ZaminEventId.DomainValidationException, "Domain Exception message is {DomainExceptionMessage}", result);
+        _logger.LogInformation(MahtaEventId.DomainValidationException, "Domain Exception message is {DomainExceptionMessage}", result);
 
         return result;
     }

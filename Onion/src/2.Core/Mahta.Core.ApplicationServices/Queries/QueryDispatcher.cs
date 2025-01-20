@@ -3,7 +3,7 @@ using Mahta.Core.RequestResponse.Queries;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using System.Diagnostics;
-using Zamin.Extensions.Logger.Abstractions;
+using Mahta.Extensions.Logger.Abstractions;
 
 namespace Mahta.Core.ApplicationServices.Queries;
 
@@ -42,7 +42,7 @@ public class QueryDispatcher : IQueryDispatcher
         finally
         {
             _stopwatch.Stop();
-            _logger.LogInformation(ZaminEventId.PerformanceMeasurement, "Processing the {QueryType} query tooks {Millisecconds} Millisecconds", query.GetType(), _stopwatch.ElapsedMilliseconds);
+            _logger.LogInformation(MahtaEventId.PerformanceMeasurement, "Processing the {QueryType} query tooks {Millisecconds} Millisecconds", query.GetType(), _stopwatch.ElapsedMilliseconds);
         }
     }
     #endregion

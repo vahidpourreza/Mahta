@@ -9,7 +9,7 @@
 
 	<ItemGroup>
 		<PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="9.0.0" />
-		<PackageReference Include="Zamin.Extensions.Serializers.Abstractions" Version="9.0.0" />
+		<PackageReference Include="Mahta.Extensions.Serializers.Abstractions" Version="9.1.0-alpha" />
 	</ItemGroup>
 
 	<ItemGroup>

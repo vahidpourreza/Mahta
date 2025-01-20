@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using System.Net;
-using Zamin.Extensions.Serializers.Abstractions;
-using Zamin.Extensions.Translations.Abstractions;
+using Mahta.Extensions.Serializers.Abstractions;
+using Mahta.Extensions.Translations.Abstractions;
 
 namespace Mahta.EndPoints.Web.Middlewares.ApiExceptionHandler;
 

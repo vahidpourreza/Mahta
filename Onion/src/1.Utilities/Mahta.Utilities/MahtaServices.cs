@@ -1,9 +1,9 @@
-﻿using Microsoft.Extensions.Logging;
-using Zamin.Extensions.Caching.Abstractions;
-using Zamin.Extensions.ObjectMappers.Abstractions;
-using Zamin.Extensions.Serializers.Abstractions;
-using Zamin.Extensions.Translations.Abstractions;
-using Zamin.Extensions.UsersManagement.Abstractions;
+﻿using Mahta.Extensions.Caching.Abstractions;
+using Mahta.Extensions.ObjectMappers.Abstractions;
+using Mahta.Extensions.Serializers.Abstractions;
+using Mahta.Extensions.Translations.Abstractions;
+using Mahta.Extensions.UsersManagement.Abstractions;
+using Microsoft.Extensions.Logging;
 
 namespace Mahta.Utilities;
 

@@ -1,6 +1,6 @@
 ﻿using Mahta.Core.Domain.Entities;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
-using Zamin.Extensions.UsersManagement.Abstractions;
+using Mahta.Extensions.UsersManagement.Abstractions;
 
 namespace Mahta.Infra.Data.Sql.Commands.Extensions;
 

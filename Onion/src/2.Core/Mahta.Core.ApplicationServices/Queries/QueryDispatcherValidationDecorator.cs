@@ -3,7 +3,7 @@ using Mahta.Core.RequestResponse.Common;
 using Mahta.Core.RequestResponse.Queries;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using Zamin.Extensions.Logger.Abstractions;
+using Mahta.Extensions.Logger.Abstractions;
 
 namespace Mahta.Core.ApplicationServices.Queries;
 
@@ -27,17 +27,17 @@ public class QueryDispatcherValidationDecorator : QueryDispatcherDecorator
     #region Query Dispatcher
     public override async Task<QueryResult<TData>> Execute<TQuery, TData>(TQuery query)
     {
-        _logger.LogDebug(ZaminEventId.QueryValidation, "Validating query of type {QueryType} With value {Query}  start at :{StartDateTime}", query.GetType(), query, DateTime.Now);
+        _logger.LogDebug(MahtaEventId.QueryValidation, "Validating query of type {QueryType} With value {Query}  start at :{StartDateTime}", query.GetType(), query, DateTime.Now);
 
         var validationResult = Validate<TQuery, QueryResult<TData>>(query);
 
         if (validationResult != null)
         {
-            _logger.LogInformation(ZaminEventId.QueryValidation, "Validating query of type {QueryType} With value {Query}  failed. Validation errors are: {ValidationErrors}", query.GetType(), query, validationResult.Messages);
+            _logger.LogInformation(MahtaEventId.QueryValidation, "Validating query of type {QueryType} With value {Query}  failed. Validation errors are: {ValidationErrors}", query.GetType(), query, validationResult.Messages);
             return validationResult;
         }
 
-        _logger.LogDebug(ZaminEventId.QueryValidation, "Validating query of type {QueryType} With value {Query}  finished at :{EndDateTime}", query.GetType(), query, DateTime.Now);
+        _logger.LogDebug(MahtaEventId.QueryValidation, "Validating query of type {QueryType} With value {Query}  finished at :{EndDateTime}", query.GetType(), query, DateTime.Now);
         return await _queryDispatcher.Execute<TQuery, TData>(query);
     }
     #endregion
@@ -65,7 +65,7 @@ public class QueryDispatcherValidationDecorator : QueryDispatcherDecorator
         }
         else
         {
-            _logger.LogInformation(ZaminEventId.CommandValidation, "There is not any validator for {QueryType}", query.GetType());
+            _logger.LogInformation(MahtaEventId.CommandValidation, "There is not any validator for {QueryType}", query.GetType());
         }
         return res;
     }

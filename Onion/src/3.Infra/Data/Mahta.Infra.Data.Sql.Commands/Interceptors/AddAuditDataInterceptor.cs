@@ -1,7 +1,7 @@
-﻿using Mahta.Infra.Data.Sql.Commands.Extensions;
+﻿using Mahta.Extensions.UsersManagement.Abstractions;
+using Mahta.Infra.Data.Sql.Commands.Extensions;
 using Microsoft.EntityFrameworkCore.Diagnostics;
 using Microsoft.EntityFrameworkCore.Infrastructure;
-using Zamin.Extensions.UsersManagement.Abstractions;
 
 namespace Mahta.Infra.Data.Sql.Commands.Interceptors;
 

@@ -2,7 +2,7 @@
 
 namespace Mahta.EndPoints.Web.Extentions.DependencyInjection;
 
-public static class AddZaminServicesExtensions
+public static class AddMahtaServicesExtensions
 {
     public static IServiceCollection AddMahtaUntilityServices(this IServiceCollection services)
     {

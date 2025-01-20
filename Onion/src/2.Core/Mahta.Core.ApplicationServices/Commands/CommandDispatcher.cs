@@ -3,7 +3,7 @@ using Mahta.Core.RequestResponse.Commands;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using System.Diagnostics;
-using Zamin.Extensions.Logger.Abstractions;
+using Mahta.Extensions.Logger.Abstractions;
 
 namespace Mahta.Core.ApplicationServices.Commands;
 
@@ -44,7 +44,7 @@ public class CommandDispatcher : ICommandDispatcher
         finally
         {
             _stopwatch.Stop();
-            _logger.LogInformation(ZaminEventId.PerformanceMeasurement, "Processing the {CommandType} command tooks {Millisecconds} Millisecconds", command.GetType(), _stopwatch.ElapsedMilliseconds);
+            _logger.LogInformation(MahtaEventId.PerformanceMeasurement, "Processing the {CommandType} command tooks {Millisecconds} Millisecconds", command.GetType(), _stopwatch.ElapsedMilliseconds);
         }
 
     }
