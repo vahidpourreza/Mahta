@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net9.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+	</PropertyGroup>
+
+
+
+	<ItemGroup>
+		<PackageReference Include="Mahta.Extensions.MessageBus.Abstractions" Version="9.1.0-alpha" />
+		<PackageReference Include="Mahta.Extensions.Serializers.Abstractions" Version="9.1.0-alpha" />
+		<PackageReference Include="Mahta.Utilities" Version="9.1.0-beta" />
+		<PackageReference Include="RabbitMQ.Client" Version="7.0.0" />
+		<PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="9.0.0" />
+		<PackageReference Include="Microsoft.Extensions.Options.ConfigurationExtensions" Version="9.0.0" />
+	</ItemGroup>
+
+
+
+</Project>
