@@ -9,7 +9,7 @@
 		<VersionPrefix>9.1.0</VersionPrefix>
 
 		<!-- Pre-release identifier -->
-		<VersionSuffix>alpha</VersionSuffix>
+		<VersionSuffix>beta</VersionSuffix>
 
 		<Authors>Mahta Authors</Authors>
 		<Company>Mahta</Company>

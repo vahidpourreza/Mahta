@@ -14,6 +14,8 @@ public class SqlOutBoxEventItemRepository : IOutBoxEventItemRepository
     private readonly IDbConnection _dbConnection;
     private readonly ILogger<SqlOutBoxEventItemRepository> _logger;
 
+    #region Constructor
+
     public SqlOutBoxEventItemRepository(IOptions<PollingPublisherDalRedisOptions> options, ILogger<SqlOutBoxEventItemRepository> logger)
     {
         _options = options.Value;
@@ -21,7 +23,11 @@ public class SqlOutBoxEventItemRepository : IOutBoxEventItemRepository
         _logger = logger;
         _logger.LogInformation("New Instance of SqlOutBoxEventItemRepository Created");
     }
-    public List<OutBoxEventItem> GetOutBoxEventItemsForPublishe(int maxCount = 100)
+    #endregion
+
+
+    #region Methods
+    public List<OutBoxEventItem> GetOutBoxEventItemsForPublish(int maxCount = 100)
     {
         try
         {
@@ -36,6 +42,7 @@ public class SqlOutBoxEventItemRepository : IOutBoxEventItemRepository
         }
 
     }
+
     public void MarkAsRead(List<OutBoxEventItem> outBoxEventItems)
     {
         try
@@ -57,5 +64,8 @@ public class SqlOutBoxEventItemRepository : IOutBoxEventItemRepository
         }
 
     }
+
+    #endregion
+
 }
 

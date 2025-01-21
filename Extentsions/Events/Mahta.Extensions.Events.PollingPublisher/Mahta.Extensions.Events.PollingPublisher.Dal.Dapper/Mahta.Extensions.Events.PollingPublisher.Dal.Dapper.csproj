@@ -9,7 +9,7 @@
 
 	<ItemGroup>
 		<PackageReference Include="Dapper" Version="2.1.35" />
-		<PackageReference Include="Mahta.Extensions.Events.Abstractions" Version="9.1.0-alpha" />
+		<PackageReference Include="Mahta.Extensions.Events.Abstractions" Version="9.1.0-beta" />
 		<PackageReference Include="Microsoft.Data.SqlClient" Version="5.2.2" />
 		<PackageReference Include="Microsoft.Extensions.Options.ConfigurationExtensions" Version="9.0.0" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="9.0.0" />
