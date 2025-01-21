@@ -1,14 +1,48 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFramework>net9.0</TargetFramework>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
-  </PropertyGroup>
+	<PropertyGroup>
+		<TargetFramework>net9.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+
+		<!-- NET_VERSION.YOUR_LIBRARY_VERSION -->
+		<VersionPrefix>9.1.0</VersionPrefix>
+
+		<!-- Pre-release identifier -->
+		<VersionSuffix>alpha</VersionSuffix>
+
+		<Authors>Mahta Authors</Authors>
+		<Company>Mahta</Company>
+		<GeneratePackageOnBuild>False</GeneratePackageOnBuild>
+		<Description> Mahta Extensions Events PollingPublisher </Description>
+		<RepositoryUrl>https://Mahta.Pro</RepositoryUrl>
+		<PackageIcon>icon.png</PackageIcon>
+
+		<!--WARNING-->
+		<CopyToLocalFolder>true</CopyToLocalFolder>
+		<!--WARNING-->
+
+	</PropertyGroup>
 
 
+	<!--WARNING-->
+	<Target Name="CopyNuGetPackage" AfterTargets="Pack" Condition="'$(CopyToLocalFolder)' == 'true'">
+		<PropertyGroup>
+			<PackageOutputPath>D:\LocalNuGetPackages</PackageOutputPath>
+		</PropertyGroup>
 
+		<ItemGroup>
+			<NuGetPackageFiles Include="$(OutputPath)..\$(PackageId).$(PackageVersion).nupkg" />
+		</ItemGroup>
+		<MakeDir Directories="$(PackageOutputPath)" />
+		<Copy SourceFiles="@(NuGetPackageFiles)" DestinationFolder="$(PackageOutputPath)" />
+		<Message Text="Copied NuGet package to $(PackageOutputPath)" Importance="high" />
+	</Target>
+	<!--WARNING-->
 
+	<ItemGroup>
+		<None Include="..\..\..\..\icon.png" Pack="true" PackagePath="" />
+	</ItemGroup>
 
 	<ItemGroup>
 		<PackageReference Include="Mahta.Extensions.Events.Abstractions" Version="9.1.0-beta" />
@@ -18,5 +52,9 @@
 		<PackageReference Include="Microsoft.Extensions.Options.ConfigurationExtensions" Version="9.0.0" />
 
 	</ItemGroup>
-	
+
 </Project>
+
+
+
+
